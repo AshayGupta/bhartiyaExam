@@ -43,19 +43,16 @@ export class HomePage {
     }
   }
 
-  clickSarkariButtons(item){
-    if(item == 'naukriButton'){
-      this.navCtrl.push(ListPage);
-    }
-    else if(item == 'resultsButton'){
-      this.navCtrl.push(SarkariResults);
-    }
-    else{
-      console.log("No Page Found...");
-    }
+
+  private clickSarkariNaukri(){
+    this.navCtrl.push(ListPage);
   }
 
-  openSubLink(link){
+  private clickSarkariResults(){
+    this.navCtrl.push(SarkariResults);
+  }
+
+  private openSubLink(link){
     window.location.href=link;
   }
 
