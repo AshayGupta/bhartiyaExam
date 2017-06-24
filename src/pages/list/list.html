@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sarkari Naukri</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-list no-lines>
+    <button ion-item *ngFor="let list of examsList" (click)="itemTapped(item)">
+      {{ list }}
+    </button>
+  </ion-list> -->
+
+  <ion-card *ngFor="let list of examsList" text-wrap>
+    <ion-item >
+      <!-- <p class="increment">{{item.increment}}</p> -->
+      <p class="examName" (click)="itemTapped(list)">{{list.name}}</p>
+      <p class="startDateTxt">StartDate: <span class="startDate">{{list.startDate}}</span></p>
+      <p class="endDateTxt">End Date: <span class="endDate">{{list.endDate}}</span></p>
+      <!-- <p *ngIf="item.showDetails" class="answer">{{item.answer}}</p> -->
+      <!-- <ion-icon *ngIf="item.showDetails == true" class="dropdown-arrow" name="arrow-down" item-right></ion-icon> -->
+      <!-- <ion-icon *ngIf="item.showDetails == false" class="dropdown-arrow" name="arrow-forward" item-right></ion-icon> -->
+
+    </ion-item>
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sarkari Results</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let list of resultsList" text-wrap>
+    <ion-item >
+      <p class="increment">{{list.increment}}.</p>
+      <p class="resultName" (click)="itemTapped(list)">{{list.name}}</p>
+      <!-- <p *ngIf="item.showDetails" class="answer">{{item.answer}}</p> -->
+      <!-- <ion-icon *ngIf="item.showDetails == true" class="dropdown-arrow" name="arrow-down" item-right></ion-icon> -->
+      <!-- <ion-icon *ngIf="item.showDetails == false" class="dropdown-arrow" name="arrow-forward" item-right></ion-icon> -->
+    </ion-item>
+  </ion-card>
+
+</ion-content>

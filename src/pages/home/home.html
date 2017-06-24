@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Bhartiya Exam</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+
+  <div class="sarkariButtons">
+    <button ion-button color="naukriButtons" class="sarkariNaukriButton" (click)="clickSarkariButtons('naukriButton')">SARKARI NAUKRI</button>
+    <button ion-button color="naukriButtons" class="sarkariResultsButton" (click)="clickSarkariButtons('resultsButton')">SARKARI RESULTS</button>
+  </div>
+
+  <ion-grid class="grid" fixed>
+    <ion-row *ngFor="let row of grid" justify-content-center>
+
+      <ion-col *ngFor="let col of row">
+        <div class="divCol" (click)="openSubLink(col.link)" text-wrap>
+          <img [src]="col.icon" class="iconImg">
+          <p class="iconTitle">{{col.title}}</p>
+        </div>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,29 @@
+page-list {
+
+  .examName{
+    color: #336699;
+    font-weight: 800;
+    padding-bottom: 5px;
+    cursor: pointer;
+  }
+
+  .startDateTxt, .endDateTxt{
+    color: #000;
+  }
+
+  .startDate{
+    color: #E4CB65;
+  }
+
+  .endDate{
+    color: #E74C3C;
+  }
+
+  .startDateTxt{
+    float: left;
+  }
+
+  .endDateTxt{
+    float: right;
+  }
+}

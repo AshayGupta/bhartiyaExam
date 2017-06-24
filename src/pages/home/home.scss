@@ -1,0 +1,54 @@
+page-home {
+
+  .grid{
+    padding-left: 12px;
+  }
+
+  .sarkariButtons{
+    margin: 10px 0px 5px 0px;
+    text-align: center;
+    display: flex;
+    width: 100%;
+  }
+
+  .sarkariButtons button{
+    width: 50%;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+  }
+
+  .sarkariNaukriButton{
+    margin: 0px 5px 0px 10px;
+  }
+
+  .sarkariResultsButton{
+    margin: 0px 10px 0px 5px;
+  }
+
+  .iconImg{
+    height: 45px;
+    width: 45px;
+    margin-top: 13px;
+  }
+
+  .divCol{
+    text-align: center;
+    height: 90px;
+    max-height: 110px;
+    width: 90px;
+    max-width: 110px;
+    background-color: #4CBA41;
+    border-radius: 5px;
+  }
+
+  .iconTitle{
+    font-size: 10px;
+    font-family: sans-serif;
+    margin: 0px;
+    color: white;
+    font-weight: 800;
+
+  }
+
+}
