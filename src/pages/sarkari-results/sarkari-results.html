@@ -9,9 +9,11 @@
 
 <ion-content>
 
-  <ion-card *ngFor="let list of getResultsList" text-wrap>
+  <p *ngIf="getResultsList.length == '0'">No Result Available</p>
+
+  <ion-card *ngFor="let list of getResultsList; let i = index" text-wrap>
     <ion-item >
-      <p class="increment">{{list.increment}}.</p>
+      <p class="increment">{{i+1}}.</p>
       <p class="resultName" (click)="itemTapped(list)">{{list.title}}</p>
       <!-- <p *ngIf="item.showDetails" class="answer">{{item.answer}}</p> -->
       <!-- <ion-icon *ngIf="item.showDetails == true" class="dropdown-arrow" name="arrow-down" item-right></ion-icon> -->
