@@ -12,11 +12,11 @@ import { Util } from '../../utils/util';
 
 export class SarkariResults {
 
-  // examNames : Array<string>;
-  // startDates : Array<string>;
-  // endDates : Array<string>;
-  // examsList: any[];
-  private getResultsList : GetResultsList[]=[];
+// examNames : Array<string>;
+// startDates : Array<string>;
+// endDates : Array<string>;
+// examsList: any[];
+private getResultsList : GetResultsList[] = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public service: ServiceProviders, public util: Util) {
     // this.examNames = ['NVS Recruitment Navodaya Vidyalaya Samiti 351 PGTs TGTs and Faculty cum System Administration Vacancy','Sports','Computer','Science','History','Awards and Honours','Geography','Constitution','SSC','Banks','Politics','Economy'];
@@ -38,8 +38,8 @@ export class SarkariResults {
       });
   }
 
-  private itemTapped(item) {
-
+  private itemTapped(url) {
+    window.location.href = url;
   }
 
 }
