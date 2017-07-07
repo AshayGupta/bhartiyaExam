@@ -9,10 +9,10 @@
 
 <ion-content>
 
-  <ion-card *ngFor="let list of resultsList" text-wrap>
+  <ion-card *ngFor="let list of getResultsList" text-wrap>
     <ion-item >
       <p class="increment">{{list.increment}}.</p>
-      <p class="resultName" (click)="itemTapped(list)">{{list.name}}</p>
+      <p class="resultName" (click)="itemTapped(list)">{{list.title}}</p>
       <!-- <p *ngIf="item.showDetails" class="answer">{{item.answer}}</p> -->
       <!-- <ion-icon *ngIf="item.showDetails == true" class="dropdown-arrow" name="arrow-down" item-right></ion-icon> -->
       <!-- <ion-icon *ngIf="item.showDetails == false" class="dropdown-arrow" name="arrow-forward" item-right></ion-icon> -->
