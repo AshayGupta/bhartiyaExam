@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ServiceProviders } from '../../providers/service-providers';
 import { GetExamsList } from '../../models/request/get-exams-list';
+import { Util } from '../../utils/util';
 
 @Component({
   selector: 'page-list',
@@ -17,7 +18,7 @@ export class ListPage {
   // examsList: any[];
   private getExamsList : GetExamsList[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public service: ServiceProviders) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public service: ServiceProviders, public util: Util) {
     // this.examNames = ['NVS Recruitment Navodaya Vidyalaya Samiti 351 PGTs TGTs and Faculty cum System Administration Vacancy','Sports','Computer','Science','History','Awards and Honours','Geography','Constitution','SSC','Banks','Politics','Economy'];
     //
     // this.startDates = ['15.06.2017','15.06.2017','15.06.2017','15.06.2017','15.06.2017','15.06.2017','15.06.2017','15.06.2017','15.06.2017','15.06.2017','15.06.2017','15.06.2017'];
@@ -37,15 +38,18 @@ export class ListPage {
     }
 
 
-    private getExamsListData(){
+  private getExamsListData(){
+    this.util.showLoading();
     this.service.getSarkariExamsList().then((data: GetExamsList[]) => {
       this.getExamsList = data;
+      this.util.dismissLoading();
     }, (error) => {
-          console.log("ERROR: ", error);
+        console.log("ERROR: ", error);
       });
-    }
+  }
 
-  itemTapped(item) {
+  private itemTapped(item) {
 
   }
+  
 }

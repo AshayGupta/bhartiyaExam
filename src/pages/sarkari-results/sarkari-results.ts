@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ServiceProviders } from '../../providers/service-providers';
 import { GetResultsList } from '../../models/request/get-results-list';
+import { Util } from '../../utils/util';
 
 @Component({
   selector: 'page-sarkari-results',
@@ -17,7 +18,7 @@ export class SarkariResults {
   // examsList: any[];
   private getResultsList : GetResultsList[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public service: ServiceProviders) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public service: ServiceProviders, public util: Util) {
     // this.examNames = ['NVS Recruitment Navodaya Vidyalaya Samiti 351 PGTs TGTs and Faculty cum System Administration Vacancy','Sports','Computer','Science','History','Awards and Honours','Geography','Constitution','SSC','Banks','Politics','Economy'];
 
     // this.startDates = ['15.06.2017','15.06.2017','15.06.2017','15.06.2017','15.06.2017','15.06.2017','15.06.2017','15.06.2017','15.06.2017','15.06.2017','15.06.2017','15.06.2017'];
@@ -36,16 +37,18 @@ export class SarkariResults {
     this.getResultsListData();
   }
 
-
   private getResultsListData(){
+    this.util.showLoading();
     this.service.getSarkariResultsList().then((data: GetResultsList[]) => {
       this.getResultsList = data;
+      this.util.dismissLoading();
     }, (error) => {
           console.log("ERROR: ", error);
       });
   }
 
-  itemTapped(item) {
+  private itemTapped(item) {
 
   }
+
 }

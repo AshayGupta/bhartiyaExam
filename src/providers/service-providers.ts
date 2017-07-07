@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Constant } from '../utils/constant';
+import { Util } from '../utils/util';
 
 @Injectable()
 export class ServiceProviders {
@@ -9,7 +10,7 @@ export class ServiceProviders {
   private examsListUrl = Constant.appBaseUrl + 'examsList';
   private resultsListUrl = Constant.appBaseUrl + 'resultsList';
 
-  constructor(public http: Http) {
+  constructor(public http: Http, public util: Util) {
 
   }
 
