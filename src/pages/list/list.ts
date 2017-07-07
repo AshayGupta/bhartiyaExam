@@ -16,7 +16,7 @@ export class ListPage {
   // startDates : Array<string>;
   // endDates : Array<string>;
   // examsList: any[];
-  private getExamsList : GetExamsList[];
+  private getExamsList : GetExamsList[] = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public service: ServiceProviders, public util: Util) {
     // this.examNames = ['NVS Recruitment Navodaya Vidyalaya Samiti 351 PGTs TGTs and Faculty cum System Administration Vacancy','Sports','Computer','Science','History','Awards and Honours','Geography','Constitution','SSC','Banks','Politics','Economy'];
@@ -51,5 +51,5 @@ export class ListPage {
   private itemTapped(item) {
 
   }
-  
+
 }

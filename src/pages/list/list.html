@@ -8,11 +8,8 @@
 </ion-header>
 
 <ion-content>
-  <!-- <ion-list no-lines>
-    <button ion-item *ngFor="let list of examsList" (click)="itemTapped(item)">
-      {{ list }}
-    </button>
-  </ion-list> -->
+
+  <p *ngIf="getExamsList.length == '0'">No Result Available</p>
 
   <ion-card *ngFor="let list of getExamsList" text-wrap>
     <ion-item >
