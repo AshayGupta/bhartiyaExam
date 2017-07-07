@@ -14,12 +14,12 @@
     </button>
   </ion-list> -->
 
-  <ion-card *ngFor="let list of examsList" text-wrap>
+  <ion-card *ngFor="let list of getExamsList" text-wrap>
     <ion-item >
       <!-- <p class="increment">{{item.increment}}</p> -->
-      <p class="examName" (click)="itemTapped(list)">{{list.name}}</p>
-      <p class="startDateTxt">StartDate: <span class="startDate">{{list.startDate}}</span></p>
-      <p class="endDateTxt">End Date: <span class="endDate">{{list.endDate}}</span></p>
+      <p class="examName" (click)="itemTapped(list)">{{list.jobTitle}}</p>
+      <p class="startDateTxt">StartDate: <span class="startDate">{{list.examStartDate}}</span></p>
+      <p class="endDateTxt">End Date: <span class="endDate">{{list.examEndDate}}</span></p>
       <!-- <p *ngIf="item.showDetails" class="answer">{{item.answer}}</p> -->
       <!-- <ion-icon *ngIf="item.showDetails == true" class="dropdown-arrow" name="arrow-down" item-right></ion-icon> -->
       <!-- <ion-icon *ngIf="item.showDetails == false" class="dropdown-arrow" name="arrow-forward" item-right></ion-icon> -->
