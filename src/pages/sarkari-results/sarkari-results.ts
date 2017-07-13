@@ -47,11 +47,11 @@ private getResultsList : GetResultsList[] = [];
 
   private itemTapped(list) {
     // window.location.href = Constant.resultDetailsUrl + list.pageUrl;
-    // window.open(Constant.resultDetailsUrl + list.pageUrl, '_blank');
-    this.platform.ready().then(() => {
-      let browser = new InAppBrowser("https://www.techiediaries.com",'_blank');
-      
-    });
+    window.open(Constant.resultDetailsUrl + list.pageUrl, '_blank');
+    // this.platform.ready().then(() => {
+    //   let browser = new InAppBrowser("https://www.techiediaries.com",'_blank');
+    //
+    // });
 
   }
 

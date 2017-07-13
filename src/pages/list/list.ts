@@ -54,7 +54,8 @@ private getExamsList : GetExamsList[] = [];
   }
 
   private itemTapped(list) {
-    window.location.href = Constant.examDetailsUrl + list.pageUrl;
+    // window.location.href = Constant.examDetailsUrl + list.pageUrl;
+    window.open(Constant.examDetailsUrl + list.pageUrl, '_blank');
   }
 
 }
