@@ -9,12 +9,12 @@
 
 <ion-content>
 
-  <p *ngIf="getExamsList.length == '0'">No Result Available</p>
+  <p *ngIf="getExamsList.length == '0'" class="no_result">{{noDataAvailable}}</p>
 
-  <ion-card *ngFor="let list of getExamsList" text-wrap>
+  <ion-card *ngFor="let list of getExamsList" (click)="itemTapped(list)" text-wrap>
     <ion-item >
       <!-- <p class="increment">{{item.increment}}</p> -->
-      <p class="examName" (click)="itemTapped(list)">{{list.jobTitle}}</p>
+      <p class="examName" >{{list.jobTitle}}</p>
       <p class="startDateTxt">StartDate: <span class="startDate">{{list.examStartDate}}</span></p>
       <p class="endDateTxt">End Date: <span class="endDate">{{list.examEndDate}}</span></p>
       <!-- <p *ngIf="item.showDetails" class="answer">{{item.answer}}</p> -->

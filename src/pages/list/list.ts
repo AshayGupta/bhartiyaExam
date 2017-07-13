@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ServiceProviders } from '../../providers/service-providers';
 import { GetExamsList } from '../../models/request/get-exams-list';
 import { Util } from '../../utils/util';
+import { Constant } from '../../utils/constant';
 
 @Component({
   selector: 'page-list',
@@ -15,6 +16,7 @@ export class ListPage {
 // startDates : Array<string>;
 // endDates : Array<string>;
 // examsList: any[];
+private noDataAvailable: string;
 private getExamsList : GetExamsList[] = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public service: ServiceProviders, public util: Util) {
@@ -42,13 +44,17 @@ private getExamsList : GetExamsList[] = [];
     this.service.getSarkariExamsList().then((data: GetExamsList[]) => {
       this.getExamsList = data;
       this.util.dismissLoading();
+      if(data.length == 0){
+        this.noDataAvailable = "No Result Available";
+      }
     }, (error) => {
-        console.log("ERROR: ", error);
+          this.noDataAvailable = "No Result Available";
+          console.log("ERROR: ", error);
       });
   }
 
-  private itemTapped(url) {
-    window.location.href = url;
+  private itemTapped(list) {
+    window.location.href = Constant.examDetailsUrl + list.pageUrl;
   }
 
 }
