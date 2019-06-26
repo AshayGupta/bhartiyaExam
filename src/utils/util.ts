@@ -13,7 +13,7 @@ export class Util {
         let toast = this.toastCtrl.create( {
             message: msg,
             duration: 2000,
-            position: 'top'
+            position: 'bottom'
         });
         toast.present();
     }
@@ -22,7 +22,7 @@ export class Util {
         let toast = this.toastCtrl.create( {
             message: msg,
             duration: 4000,
-            position: 'top'
+            position: 'bottom'
         });
         toast.present();
     }
